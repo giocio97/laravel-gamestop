@@ -20,15 +20,15 @@
     <link href="{{ asset('css/back.css') }}" rel="stylesheet">
 </head>
 <body>
-    @include('admin.partials.top-nav')
+    
     <div class="container-fluid">
         <div class="row">
-            @include('admin.partials.side-nav')
+            
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 py-4">
                 @yield('mainContent')
-            </main>
+            </main> 
         </div>
-    </div>
+    </div> 
 </body>
 </html>

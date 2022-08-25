@@ -8,15 +8,11 @@ use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    protected $perPage = 20;
     public function index()
     {
-        $posts = Game::paginate($this->perPage);
-        return view('admin.index', compact('posts'));
+        $games = Game::paginate($this->perPage);
+        return view('admin.index', compact('games'));
     }
 
     /**
