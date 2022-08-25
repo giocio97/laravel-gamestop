@@ -24,7 +24,7 @@ class GameController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
