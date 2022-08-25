@@ -1,6 +1,10 @@
 Documento vuoto
 <<<<<<< HEAD
+<<<<<<< HEAD
 Francesco scrive cose a caso
+=======
+ciao sono giuseppe
+>>>>>>> 50bbae8455a102772cfe3f0a3f3c55c871c6b829
 =======
 
 il ca**o che vuole a caso
