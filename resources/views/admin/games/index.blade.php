@@ -33,6 +33,7 @@
 
                     <td class="actions">
                         {{-- <a href="{{ route('admin.create', ['game' => $game]) }}" class="btn btn-primary">Create new game</a> --}}
+                        <a href="{{ route('admin.games.show', $game->id) }}" class="btn btn-primary">View game</a>
                     </td>
                 </tr>
             @endforeach
