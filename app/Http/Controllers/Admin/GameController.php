@@ -12,7 +12,7 @@ class GameController extends Controller
     public function index()
     {
         $games = Game::paginate($this->perPage);
-        return view('admin.index', compact('games'));
+        return view('admin.games.index', compact('games'));
     }
 
     /**
@@ -24,9 +24,7 @@ class GameController extends Controller
     {
         $games = Game::all();
 
-        return view('admin.create', [
-            'categories'    => $games
-        ]);
+        return view('admin.games.create', compact('games'));
     }
 
     /**
@@ -37,7 +35,7 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -46,7 +44,7 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Game $game)
     {
         //
     }
@@ -57,7 +55,7 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Game $game)
     {
         //
     }
@@ -69,7 +67,7 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         //
     }
