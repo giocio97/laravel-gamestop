@@ -23,7 +23,7 @@ class CreateGamesTable extends Migration
             $table->string('genere');
             $table->string('copertina');
             $table->string('console');
-            $table->string('store');
+            $table->string('store')->nullable();
 
 
         });

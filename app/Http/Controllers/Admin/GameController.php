@@ -23,8 +23,14 @@ class GameController extends Controller
     public function create()
     {
         $games = Game::all();
+        $console = [
+            'Playstation', 'Xbox', 'Pc', 'Nintendo'
+        ];
 
-        return view('admin.games.create', compact('games'));
+        return view('admin.games.create', [
+            'games'     => $games,
+            'console'   => $console
+        ]);
     }
 
     /**
@@ -35,7 +41,21 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $console = [
+            'Playstation', 'Xbox', 'Pc', 'Nintendo'
+        ];
+
+
+        $form_data = $request->all();
+        $newGame = new Game();
+        $newGame->titolo = $form_data['titolo'];
+        $newGame->user_id = 1;
+        $newGame->copertina = $form_data['copertina'];
+        $newGame->genere = $form_data['genere'];
+        $newGame->console = $console[rand(0, 3)];
+        $newGame->save();
+
+        return redirect()->route('admin.games.show', $newGame->id);
     }
 
     /**

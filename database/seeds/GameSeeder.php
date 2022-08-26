@@ -15,9 +15,9 @@ class GameSeeder extends Seeder
      * @return void
      */
     public function run(Faker $faker){
-       $console = [
-        'Playstation', 'Xbox', 'Pc', 'Nintendo'
-       ];
+    //    $console = [
+    //     'Playstation', 'Xbox', 'Pc', 'Nintendo'
+    //    ];
 
 
         for ($i=0; $i < 5 ; $i++) {
@@ -27,8 +27,8 @@ class GameSeeder extends Seeder
         $game-> titolo = $faker-> words(rand(2,4),true);
         $game-> genere = $faker -> words(rand(1,2),true);
         $game-> copertina = 'https://picsum.photos/id/'. (rand(1,300)). '/400/400';
-        $game-> console = $console[rand(0,3)];
-        $game-> store = rand(1,2);
+        $game-> console = $faker-> words(rand(1,2), true);
+        $game-> store = 'Via Roma';
         $game->save();
 
 

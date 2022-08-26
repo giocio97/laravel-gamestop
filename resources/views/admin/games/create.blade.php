@@ -31,12 +31,7 @@
 
         <div class="mb-3">
             <label class="form-label" for="genere">Genere</label>
-            <select class="form-select @error('genere') is-invalid @enderror" name="genere" id="genere">
-                <option @if(!old('genere')) selected @endif disabled value="">Choose...</option>
-                @foreach ($generes as $genere)
-                    <option value="{{ $genere->id }}" @if($genere->id == old('genere')) selected @endif>{{ $genere->name }}</option>
-                @endforeach
-            </select>
+            <input class="form-control  @error('genere') is-invalid @enderror"  name="genere" id="genere" value="{{ old('genere') }}" type="text" >
             @error('genere')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -45,24 +40,18 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label" for="content">Content</label>
-            <textarea class="form-control @error('content') is-invalid @enderror" name="content" id="content">{{ old('content') }}</textarea>
-            @error('content')
+            <label class="form-label" for="console">Console</label>
+            <input class="form-control  @error('console') is-invalid @enderror"  name="console" id="console" value="{{ old('console') }}" type="text" >
+            @error('console')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>
             @enderror
         </div>
 
-        <div class="mb-3">
-            <label class="form-label" for="excerpt">Excerpt</label>
-            <textarea class="form-control @error('excerpt') is-invalid @enderror" name="excerpt" id="excerpt">{{ old('excerpt') }}</textarea>
-            @error('excerpt')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
-            @enderror
-        </div>
+
+
+        
 
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
